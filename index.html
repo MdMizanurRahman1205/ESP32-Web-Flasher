@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>ESP32 Firmware Installer</title>
 
   <script
@@ -10,28 +13,243 @@
   </script>
 
   <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
     body{
-      font-family: Arial;
-      text-align:center;
-      margin-top:100px;
-      background:#111;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg,#050816,#0f172a,#111827);
       color:white;
+      min-height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      padding:20px;
+    }
+
+    .container{
+      width:100%;
+      max-width:700px;
+      background: rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.1);
+      border-radius:25px;
+      padding:40px;
+      text-align:center;
+      backdrop-filter: blur(10px);
+      box-shadow:0 0 40px rgba(0,255,200,0.15);
+    }
+
+    .logo{
+      width:120px;
+      margin-bottom:20px;
     }
 
     h1{
-      color:#00ffcc;
+      font-size:42px;
+      margin-bottom:15px;
+      color:#00ffd5;
     }
+
+    .subtitle{
+      font-size:18px;
+      color:#cbd5e1;
+      margin-bottom:30px;
+      line-height:1.6;
+    }
+
+    .feature-box{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:15px;
+      margin-bottom:35px;
+    }
+
+    .feature{
+      background:rgba(255,255,255,0.06);
+      padding:18px;
+      border-radius:15px;
+      border:1px solid rgba(255,255,255,0.08);
+      transition:0.3s;
+    }
+
+    .feature:hover{
+      transform:translateY(-5px);
+      background:rgba(0,255,200,0.08);
+    }
+
+    .feature h3{
+      margin-bottom:8px;
+      color:#00ffd5;
+      font-size:18px;
+    }
+
+    .feature p{
+      font-size:14px;
+      color:#cbd5e1;
+    }
+
+    esp-web-install-button{
+      --esp-tools-button-color:#00ffd5;
+      --esp-tools-button-text-color:#000;
+      --esp-tools-button-border-radius:14px;
+      --esp-tools-button-padding:18px 30px;
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    .steps{
+      margin-top:35px;
+      text-align:left;
+      background:rgba(255,255,255,0.04);
+      padding:20px;
+      border-radius:18px;
+    }
+
+    .steps h2{
+      margin-bottom:15px;
+      color:#00ffd5;
+      text-align:center;
+    }
+
+    .steps ol{
+      padding-left:20px;
+      line-height:2;
+      color:#d1d5db;
+    }
+
+    .socials{
+      margin-top:35px;
+    }
+
+    .socials a{
+      display:inline-block;
+      margin:10px;
+      padding:12px 20px;
+      border-radius:12px;
+      text-decoration:none;
+      color:white;
+      font-weight:bold;
+      transition:0.3s;
+      background:rgba(255,255,255,0.08);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .socials a:hover{
+      background:#00ffd5;
+      color:black;
+      transform:scale(1.05);
+    }
+
+    .footer{
+      margin-top:30px;
+      font-size:14px;
+      color:#94a3b8;
+    }
+
+    @media(max-width:700px){
+
+      h1{
+        font-size:30px;
+      }
+
+      .feature-box{
+        grid-template-columns:1fr;
+      }
+
+      .container{
+        padding:25px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-<h1>ESP32 Firmware Installer</h1>
+  <div class="container">
 
-<p>Connect ESP32 using USB</p>
+    <img 
+      class="logo"
+      src="https://cdn-icons-png.flaticon.com/512/5969/5969059.png"
+      alt="ESP32 Logo">
 
-<esp-web-install-button manifest="manifest.json">
-</esp-web-install-button>
+    <h1>ESP32 Firmware Installer</h1>
+
+    <p class="subtitle">
+      Flash the latest ESP32 firmware directly from your browser.<br>
+      No Arduino IDE required.
+    </p>
+
+    <div class="feature-box">
+
+      <div class="feature">
+        <h3>⚡ One Click Flash</h3>
+        <p>Install firmware directly using USB.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🚀 Fast & Easy</h3>
+        <p>No drivers or software setup needed.</p>
+      </div>
+
+      <div class="feature">
+        <h3>🔒 Safe Firmware</h3>
+        <p>Official firmware hosted on GitHub.</p>
+      </div>
+
+      <div class="feature">
+        <h3>💻 Browser Based</h3>
+        <p>Works with Chrome and Edge browser.</p>
+      </div>
+
+    </div>
+
+    <esp-web-install-button manifest="manifest.json">
+    </esp-web-install-button>
+
+    <div class="steps">
+
+      <h2>How To Install</h2>
+
+      <ol>
+        <li>Connect your ESP32 board using USB</li>
+        <li>Click the Install button above</li>
+        <li>Select the correct COM Port</li>
+        <li>Wait for flashing to complete</li>
+        <li>Enjoy your firmware 🚀</li>
+      </ol>
+
+    </div>
+
+    <div class="socials">
+
+      <a href="https://github.com/MdMizanurRahman1205" target="_blank">
+        GitHub
+      </a>
+
+      <a href="https://youtube.com/" target="_blank">
+        YouTube
+      </a>
+
+      <a href="https://instagram.com/" target="_blank">
+        Instagram
+      </a>
+
+      <a href="mailto:yourmail@gmail.com">
+        Contact
+      </a>
+
+    </div>
+
+    <div class="footer">
+      Developed by Md Mizanur Rahman ❤️
+    </div>
+
+  </div>
 
 </body>
 </html>
