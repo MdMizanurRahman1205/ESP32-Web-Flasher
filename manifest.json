@@ -1,0 +1,23 @@
+{
+  "name": "ESP32 Blink Firmware",
+  "version": "1.0",
+  "builds": [
+    {
+      "chipFamily": "ESP32",
+      "parts": [
+        {
+          "path": "blink_led.ino.bootloader.bin",
+          "offset": 4096
+        },
+        {
+          "path": "blink_led.ino.partitions.bin",
+          "offset": 32768
+        },
+        {
+          "path": "blink_led.ino.bin",
+          "offset": 65536
+        }
+      ]
+    }
+  ]
+}
